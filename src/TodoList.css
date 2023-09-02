@@ -1,0 +1,44 @@
+body{
+    background-color: aquamarine;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div > input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10%;
+}
+
+div > button {
+    padding: 10px 20px;
+}
+
+div > ul {
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    /* padding: 0; */
+    text-align: center;
+}
+
+li {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
