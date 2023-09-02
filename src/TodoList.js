@@ -15,7 +15,7 @@ function TodoList() {
 
     const handleAddTask = () => {
         if (newTask.trim() === '') return;
-
+        setNewTask('Added');
         axios.post('https://todoappbackend-h51x.onrender.com/api/tasks/', { title: newTask, completed: false })
             .then(() => {
                 setNewTask('');
