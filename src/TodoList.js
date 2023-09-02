@@ -6,7 +6,7 @@ function TodoList() {
     const [newTask, setNewTask] = useState('');
 
     useEffect(() => {
-        axios.get('/api/tasks/')
+        axios.get('https://todoappbackend-h51x.onrender.com/api/tasks/')
             .then(response => setTasks(response.data))
             .catch(error => console.error(error));
     }, []);
@@ -24,10 +24,10 @@ function TodoList() {
             .catch(error => console.error(error));
     };
 
-    useEffect(() => {
-        loadTasks();
+    // useEffect(() => {
+    //     loadTasks();
         
-      }, []);
+    //   }, []);
 
     // *********************************************LOAD ALL TASKS**************************************************************
 
