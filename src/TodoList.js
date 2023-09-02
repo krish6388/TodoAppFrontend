@@ -16,7 +16,7 @@ function TodoList() {
     const handleAddTask = () => {
         if (newTask.trim() === '') return;
 
-        axios.post('http://127.0.0.1:8000/api/tasks/', { title: newTask, completed: false })
+        axios.post('https://todoappbackend-h51x.onrender.com/api/tasks/', { title: newTask, completed: false })
             .then(() => {
                 setNewTask('');
                 loadTasks();
@@ -24,10 +24,15 @@ function TodoList() {
             .catch(error => console.error(error));
     };
 
+    useEffect(() => {
+        loadTasks();
+        
+      }, []);
+
     // *********************************************LOAD ALL TASKS**************************************************************
 
     const loadTasks = () => {
-        axios.get('http://127.0.0.1:8000/api/tasks/')
+        axios.get('https://todoappbackend-h51x.onrender.com/api/tasks/')
             .then(response => setTasks(response.data))
             .catch(error => console.error(error));
     };
@@ -35,7 +40,7 @@ function TodoList() {
     // ******************************************MARK A TASK AS COMPLETE**********************************************************
 
     const handleToggleComplete = (taskId, completed) => {
-        axios.patch(`http://127.0.0.1:8000/api/tasks/${taskId}/`, { completed })
+        axios.patch(`https://todoappbackend-h51x.onrender.com/api/tasks/${taskId}/`, { completed })
             .then(() => loadTasks())
             .catch(error => console.error(error));
     };
@@ -43,7 +48,7 @@ function TodoList() {
     // ******************************************DELETE A TASKS*******************************************************************
 
     const handleDeleteTask = (taskId) => {
-        axios.delete(`http://127.0.0.1:8000/api/tasks/${taskId}/`)
+        axios.delete(`https://todoappbackend-h51x.onrender.com/api/tasks/${taskId}/`)
             .then(() => loadTasks())
             .catch(error => console.error(error));
     };
